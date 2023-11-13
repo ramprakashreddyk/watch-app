@@ -128,15 +128,15 @@ const SingleHomePage = () => {
                         </p>
                         <div className="flex text-gray-300 items-center space-x-4 mt-4">
                             <AiOutlineLike
-                                className={likeActive ? 'text-blue-500' : ''}
+                                className={likeActive ? 'text-blue-500 cursor-pointer' : 'cursor-pointer'}
                                 onClick={handleLikeClick}
                             />
-                            <p className={likeActive ? 'text-blue-500' : ''}>Like</p>
+                            <p className={likeActive ? 'text-blue-500 cursor-pointer' : 'cursor-pointer'}>Like</p>
                             <AiOutlineDislike
-                                className={dislikeActive ? 'text-blue-500' : ''}
+                                className={dislikeActive ? 'text-blue-500 cursor-pointer' : 'cursor-pointer'}
                                 onClick={handleDislikeClick}
                             />
-                            <p className={dislikeActive ? 'text-blue-500' : ''}>Dislike</p>
+                            <p className={dislikeActive ? 'text-blue-500 cursor-pointer' : 'cursor-pointer'}>Dislike</p>
                             <FiSave className="cursor-pointer hover:text-blue-600" onClick={() => {
                                 currentUser !== null ? dispatch(storedSavedVideos(apiData)) : handleToast()
                             }} />

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { handleLoginData } from '../../../redux/features/auth-slice';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 const LoginForm = () => {
     const router = useRouter();
     const dispatch = useDispatch();
@@ -72,6 +73,12 @@ const LoginForm = () => {
                         >
                             Login
                         </button>
+                        <Link href="/register"
+                            type="submit"
+                            className="bg-green-500 mt-3 text-center text-white w-full p-2 rounded-md"
+                        >
+                            Signup
+                        </Link>
                     </div>
                 </form>
             </div>

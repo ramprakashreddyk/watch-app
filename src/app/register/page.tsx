@@ -4,10 +4,11 @@ import { useDispatch, useSelector } from "react-redux"
 import { handleRegisterData } from '../../../redux/features/auth-slice';
 import * as yup from 'yup'
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 const RegistrationForm = () => {
     const dispatch = useDispatch();
     const { registerData } = useSelector((state: any) => state.auth)
-    const router=useRouter();
+    const router = useRouter();
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -95,13 +96,18 @@ const RegistrationForm = () => {
                         />
                         {errors.password && <p className="text-red-500">{errors.password}</p>}
                     </div>
-                    <div className="mb-6">
+                    <div className="mb-6 flex flex-col gap-2">
                         <button
                             type="submit"
                             className="bg-blue-500 text-white w-full p-2 rounded-md"
                         >
                             Register
                         </button>
+                        <Link href="/login"
+                            className="bg-green-500 text-center text-white w-full p-2 rounded-md"
+                        >
+                            Login
+                        </Link>
                     </div>
                 </form>
             </div>
